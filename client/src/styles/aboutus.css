@@ -1,4 +1,10 @@
-
+.aboutus{
+    background-image: url('../assets/p1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
 
 .space{
     padding: 2.5rem;
@@ -30,7 +36,10 @@
     width: auto;
 }
 
-
+.img:hover{
+    opacity: 0.5s;
+    transition: 0.7s;
+}
 
 .container{
     justify-content: center;

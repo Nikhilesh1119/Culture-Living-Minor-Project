@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import img1 from '../assets/p1.jpg';
-import img2 from '../assets/p2.jpg';
-import img3 from '../assets/p3.jpg';
-import p1 from '../assets/img1.jpg';
-import p2 from '../assets/img2.jpg';
-import p3 from '../assets/img3.jpg';
+import p4 from '../assets/p4.jpg';
+import p2 from '../assets/p2.jpg';
+import p3 from '../assets/p3.jpg';
+import img1 from '../assets/img1.jpg';
+import img2 from '../assets/img2.jpg';
+import img3 from '../assets/img3.jpg';
 
 import '../styles/aboutus.css';
 
@@ -13,7 +13,7 @@ import '../styles/aboutus.css';
 export default class Aboutus extends Component {
   render() {
     return (
-      <div>
+      <div className='aboutus'>
 
         <div className='space'>
           <p className='intro'>
@@ -22,9 +22,9 @@ export default class Aboutus extends Component {
         </div>
 
         <div className='three-box'>
-          <div className="img"><img src={img1} alt="img1" /></div>
-          <div className="img"><img src={img2} alt="img2" /></div>
-          <div className="img"><img src={img3} alt="img3" /></div>
+          <div className="img"><img src={p2} alt="p2" /></div>
+          <div className="img"><img src={p3} alt="p3" /></div>
+          <div className="img"><img src={p4} alt="p4" /></div>
         </div>
 
         <h2 className='h2'>Why HomeStay?</h2>
@@ -62,7 +62,7 @@ export default class Aboutus extends Component {
               <div className="col-md-4">
                 <div className='single-team'>
                   <div className="team-img">
-                    <img src={p1} alt="p1" />
+                    <img src={img1} alt="p1" />
                   </div>
                   <div className="team-content">
                     <div className="team-info">
@@ -79,7 +79,7 @@ export default class Aboutus extends Component {
               <div className="col-md-4">
                 <div className='single-team'>
                   <div className="team-img">
-                    <img src={p2} alt="p2" />
+                    <img src={img2} alt="p2" />
                   </div>
                   <div className="team-content">
                     <div className="team-info">
@@ -96,7 +96,7 @@ export default class Aboutus extends Component {
               <div className="col-md-4">
                 <div className='single-team'>
                   <div className="team-img">
-                    <img src={p3} alt="p3" />
+                    <img src={img3} alt="p3" />
                   </div>
                   <div className="team-content">
                     <div className="team-info">

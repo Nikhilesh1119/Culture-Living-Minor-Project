@@ -25,6 +25,7 @@ export default function HostLogin() {
           id="email"
           name="email"
           type="email"
+          pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}'
           placeholder="Email"
           onChange={formik.handleChange}
           value={formik.values.firstName}
@@ -41,7 +42,7 @@ export default function HostLogin() {
         <button className={styles.btn}>Login</button>
       </form>
       <div className={styles.line}><span> or </span></div>
-      <div className={styles.link}>Don't have an Account? <Link to="/host_signup">signup</Link></div>
+      <div className={styles.link}>Don't have an Account? <Link to="/hostsignup">signup</Link></div>
       </div>
     </div>
 
