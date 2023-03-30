@@ -1,0 +1,32 @@
+.headings{
+    background-color: blueviolet;
+    border-radius: 10px;
+    margin: 35px 0%;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-family: 'Poppins', sans-serif !important;
+  }
+
+  .sliderStyle{
+    width: 99%;
+    height: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
+  
+.sliderImg{
+    /* border: 1px solid red;
+    border-radius: 10px; */
+}
+
+.sub_headings{
+    font-size: 25px;
+    color: blueviolet;
+    font-family: 'Poppins', sans-serif !important;
+}
+.cols{
+    margin-bottom: 15px;
+}

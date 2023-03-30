@@ -1,0 +1,129 @@
+
+
+.space{
+    padding: 2.5rem;
+}
+
+.intro{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.h2{
+    text-align: center;
+
+}
+
+.three-box{
+    text-align: center;
+    font-size: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.img{
+    padding: 0 1rem 1rem;
+    height: auto;
+    width: auto;
+}
+
+
+
+.container{
+    justify-content: center;
+    align-content: center;
+}
+
+.section-title h2{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.section-title{
+    margin: 3% 0;
+}
+ 
+.section-title p{
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.single-team{
+    padding-bottom: 7rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px #000;
+}
+
+.team-img{
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.team-img img{
+    width: 100%;
+    transition: .5s;
+}
+
+.single-team:hover .team-img img{
+    transform: scale(1,1);
+}
+
+.team-content{
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    overflow: hidden;
+    bottom: 0;
+    transition: all 0.9s;
+    background: aqua;
+    z-index: 5;
+}
+
+.single-team:hover .team-content{
+    height: 15rem;
+    background: black;
+}
+
+.team-info{
+    padding: 5px 20px 5px 20px;
+    transition: all .9s;
+}
+
+.single-team:hover .team-content{
+    background: #000;
+}
+
+.single-team .team-content .team-info h3{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    margin: 5px;
+} 
+
+
+.single-team:hover .team-info h3{
+    color: aqua;
+    font-weight: bold;
+} 
+
+.team-info p{
+    margin-top: 15px;
+    color: #fff;
+}
+
+.single-team-text p{
+    margin-top: 5px;
+}
+
+.team-text{
+    color: #fff;
+    padding: 0 10px 5px;
+}

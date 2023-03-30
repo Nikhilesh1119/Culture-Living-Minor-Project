@@ -1,0 +1,26 @@
+.headings{
+    /* margin-top: 120px !important; */
+    background-color: #fff389;
+    border-radius: 10px;
+    margin: 120px 20px 35px 20px;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 40px;
+    color: blue;
+    font-family: 'Poppins', sans-serif !important;
+  }
+
+  .cols{
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .cards{
+      margin: auto !important;
+    }
+    
+    .cards:hover{
+        position: relative;
+        bottom: 10px;
+        box-shadow: 2px 2px 5px 2px rgb(164, 162, 162),-2px -2px 5px 2px rgb(164, 162, 162);
+  }

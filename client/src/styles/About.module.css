@@ -1,0 +1,85 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.headings{
+  background-color: #fff389;
+  border-radius: 10px;
+  margin: 35px 0%;
+  padding: 20px 0px;
+  text-align: center;
+  font-size: 40px;
+  color: blue;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.logos{
+    position: relative;
+    top: 58px;
+    z-index: 1;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
+    /* border: 1px solid ; */
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); */
+    box-shadow: 1px 1px 5px 1px #59b4f9,-1px -1px 5px 1px #59b4f9;
+  }
+
+  .cards{
+    padding-top: 30px !important; 
+    /* border: 2px solid #d8d8d8 !important; */
+    border-radius: 15px !important;
+  }
+  .cards:hover{
+  box-shadow: 2px 2px 5px 2px rgb(164, 162, 162),-2px -2px 5px 2px rgb(164, 162, 162);
+}
+.image_text:hover{
+  box-shadow: 2px 2px 5px 2px rgb(164, 162, 162),-2px -2px 5px 2px rgb(164, 162, 162);
+}
+  .cols{
+    text-align: center;
+  }
+
+  .card_header{
+    text-align: center !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+.card_text{
+  text-align: left !important;
+}
+
+.teamImage{
+width: 275px;
+border-radius: 50%;
+}
+
+.image_container{
+  margin: auto;
+  text-align: center;
+  /* border: 1px solid red; */
+  /* margin-top: 65px !important; */
+}
+.teamImage:hover{
+  box-shadow: 1px 1px 5px 1px #59b4f9,-1px -1px 5px 1px #59b4f9;
+}
+
+.image_text{
+  margin: auto !important;
+  border: 1px solid #bfbbbb;
+  border-radius: 20px;
+  /* background-color: rgb(118, 247, 118); */
+  padding: 40px !important;
+  /* margin-bottom: 45px !important; */
+}
+
+.image_container>p{
+  /* font-weight: 400px !important; */
+ border: 2px solid red !important;
+}
+
+#temp{
+  margin-bottom:65px !important
+}
