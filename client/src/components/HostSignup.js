@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
-import '../styles/HostSignup.module.css';
+import s from '../styles/HostSignup.module.css';
 import convertToBase64 from '../helper/convert';
 
 export default function HostSignup() {
@@ -43,7 +43,7 @@ export default function HostSignup() {
     }
 
     return (
-        <div>
+        <div className={s.hostsignup}>
 
             <div className="container-fluid bg-dark text-light py-3">
                 <header className="text-center">
