@@ -2,16 +2,16 @@ import mongoose from "mongoose";
 const HostSchema = mongoose.Schema({
     firstname: {
         type: String,
-        required: [true, "please provide username"]
+        required: true
     },
     lastname: {
         type: String,
-        required: [true, "please provide username"]
+        required: true
     },
     email: {
         type: String,
-        required: [true, "please enter a email"],
-        unique: [true, "email already exist!"]
+        required: true,
+        unique: true
     },
     phone: {
         type: Number,
@@ -79,6 +79,10 @@ const HostSchema = mongoose.Schema({
     images: [{
         data: Buffer,
         contentType: String
+    }],
+    facility:[{
+        data:Buffer,
+        type:String
     }]
 })
 

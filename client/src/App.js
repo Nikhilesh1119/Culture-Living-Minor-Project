@@ -37,7 +37,7 @@ import SingleHomestay from "./components/SingleHomestay";
 import Error from "./components/Error";
 import HostLogin from "./components/HostLogin";
 import HostSignup from "./components/HostSignup";
-
+import GuestSignup from "./components/GuestSignup";
 
 export default function App() {
   return (
@@ -53,6 +53,7 @@ export default function App() {
        <Route path="/hostlogin" element={<HostLogin/>} />
        <Route path="*" element={<Error/>} />
        <Route path="/hostsignup" element={<HostSignup/>} />
+       <Route path="/guestsignup" element={<GuestSignup/>} />
      </Routes >
      <Footer/>
     </BrowserRouter>    
