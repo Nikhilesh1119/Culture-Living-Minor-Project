@@ -1,11 +1,8 @@
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
-import s from '../styles/GuestSignup.module.css';
-import{Row , Col} from 'react-bootstrap';
+import s from '../styles/HostSignup.module.css';
 
 export default function GuestSignup() {
-    const [file, setfile] = useState();
-    const[facilities,setFacilities]=useState([]);
    
     const formik = useFormik({
         initialValues: {
