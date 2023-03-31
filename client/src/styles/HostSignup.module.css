@@ -10,7 +10,7 @@
 form{
     /* box-shadow: 2px 6px 100px #ffffff; */
 }
-input,select{
+.input,select{
     border:1px solid #fff;
     border-radius: 10px;
     height: 40px;
@@ -19,7 +19,7 @@ input,select{
     box-shadow :-1px -1px 5px -1px rgb(164, 162, 162), 1px 1px 5px -1px rgb(164, 162, 162)
  } 
 
- input { outline: none; }
+ .input { outline: none; }
 
  .container{
     /* border: 1px solid red; */
@@ -45,15 +45,27 @@ input,select{
 }
 
 .line{
-    width: 95%; 
+    width: 90%; 
     color: blue;
    text-align: center; 
    border-bottom: 1px solid blue; 
    line-height: 0.1em;
-   margin: 50px 13px 10px;
+   margin: 50px 0px 10px !important;
 }
 
 .line span{
     background:#fff; 
     padding:0 10px;
+}
+
+.checkbox{
+    height: 25px;
+    width: 25px;
+    margin-left: 30px;
+}
+
+.checkbox_label{
+    position: relative;
+    bottom: 8px;
+    margin-left: 15px;
 }

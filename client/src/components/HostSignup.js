@@ -5,7 +5,8 @@ import convertToBase64 from '../helper/convert';
 import{Row , Col} from 'react-bootstrap'
 export default function HostSignup() {
     const [file, setfile] = useState();
-
+    const[facilities,setFacilities]=useState([]);
+   
     const formik = useFormik({
         initialValues: {
             firstname: '',
@@ -28,18 +29,32 @@ export default function HostSignup() {
         validateOnBlur: false,
         validateOnChange: false,
         onSubmit: async function (value) {
-            value = await Object.assign(value, { profile: file || '' });
+            let temp =[];
+            for(var i=0; i<file.length; i++){
+            const t =  await convertToBase64(file[i]);
+            temp.push(t);
+            }
+            value = await Object.assign(value, { profile: temp || '' });
+            value = await Object.assign(value, { facility: facilities || '' });
             console.log(value);
-            console.log(file);
-
         }
     })
 
     const onupload = async e => {
-        console.log(e.target.value);
-        const base64 = await convertToBase64(e.target.files[0])
-        setfile(base64)
+         setfile(e.target.files);
     }
+
+     const handleCheckboxChange = e=>{
+        // console.log(e.target.value);
+        const {value, checked} = e.target;
+        if(checked){
+            setFacilities([...facilities,value]);
+        }
+        else{
+            setFacilities(facilities.filter((itm)=>{return itm!==value}))
+        }
+        console.log(facilities);
+     }
 
     return (
         <div className={s.hostsignup}>
@@ -139,6 +154,123 @@ export default function HostSignup() {
                         </Row>
                         {/* <span><label htmlFor="" className="form-label">What is the price of hosting</label></span> */}
                      {/* <span col>single :</span> <input {...formik.getFieldProps('price')} type="text" className="form-control" required /> */}
+
+
+
+                     <div>
+                        <h5>Facilities : </h5>
+                        <Row>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Parking' name="Parking" value="Parking" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Parking'className={s.checkbox_label}>Parking</label>
+                            </Col>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Laundry' name="Laundry" value="Laundry" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Laundry'className={s.checkbox_label}>Laundry</label>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Air Conditioner' name="Air Conditioner" value="Air Conditioner" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Air Conditioner'className={s.checkbox_label}>Air Conditioner</label>
+                            </Col>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='GYM' name="GYM" value="GYM" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='GYM'className={s.checkbox_label}>GYM</label>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Swiming Pool' name="Swiming Pool" value="Swiming Pool" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Swiming Pool'className={s.checkbox_label}>Swiming Pool</label>
+                            </Col>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Free WiFi' name="Free WiFi" value="Free WiFi" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Free WiFi'className={s.checkbox_label}>Free WiFi</label>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Pick and Drop' name="Pick and Dropl" value="Pick and Drop" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Pick and Drop'className={s.checkbox_label}>Pick and Drop</label>
+                            </Col>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Garden' name="Garden" value="Garden" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Garden'className={s.checkbox_label}>Garden</label>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Television' name="Television" value="Television" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Television'className={s.checkbox_label}>Television</label>
+                            </Col>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Hot Water' name="Hot Water" value="Hot Water" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Hot Water'className={s.checkbox_label}>Hot Water</label>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Pet Friendly' name="Pet Friendly" value="Pet Friendly" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Pet Friendly'className={s.checkbox_label}>Pet Friendly</label>
+                            </Col>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Hot Water' name="Library" value="Library" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Library'className={s.checkbox_label}>Library</label>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Toiletries' name="Toiletries" value="Toiletries"onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Toiletries'className={s.checkbox_label}>Toiletries</label>
+                            </Col>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Smoking Allowed' name="Smoking Allowed" value="Smoking Allowed" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Smoking Allowed'className={s.checkbox_label}>Smoking Allowed</label>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Kitchen Access' name="Kitchen Access" value="Kitchen Access" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Kitchen Access'className={s.checkbox_label}>Kitchen Access</label>
+                            </Col>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Free Meal' name="Free Meal" value="Free Meal" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Free Meal'className={s.checkbox_label}>Free Meal</label>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Power Backup' name="Power Backup" value="Power Backup" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Power Backup'className={s.checkbox_label}>Power Backup</label>
+                            </Col>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Security' name="Security" value="Security" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Security'className={s.checkbox_label}>Security</label>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='CCTV Camera' name="CCTV Camera" value="CCTV Camera" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='CCTV Camera'className={s.checkbox_label}>CCTV Camera</label>
+                            </Col>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Regular Cleaning' name="Regular Cleaning" value="Regular Cleaning" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Regular Cleaning'className={s.checkbox_label}>Regular Cleaning</label>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Badroom Accessories' name="Badroom Accessories" value="Badroom Accessories" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Badroom Accessories'className={s.checkbox_label}>Badroom Accessories</label>
+                            </Col>
+                            <Col md="12" lg="6" style={{marginTop: "-16px"}}>
+                                 <input type="checkbox" id='Open Sitting Area' name="Open Sitting Area" value="Open Sitting Area" onChange={(e)=>{handleCheckboxChange(e)}} className={s.checkbox}/>
+                                 <label htmlFor='Open Sitting Area'className={s.checkbox_label}>Open Sitting Area</label>
+                            </Col>
+                        </Row>
+                    </div>
+
                     </div>
                     <div className="col-12">
                         <label htmlFor="formFileMultiple" class="form-label">Upload images of your house</label>

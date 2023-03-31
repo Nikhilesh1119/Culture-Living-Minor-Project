@@ -146,7 +146,7 @@ export default function About() {
           <Col md="12" lg="8" className={styles.image_text}>
             {/* <h4 style={{textAlign:"center"}}><strong>"Kuldeep Panwar"</strong></h4> */}
             <p >
-            I <strong>Kuldeep Panwar</strong> student of Acropolis intitute of Technology and Research Indore pursuing B. Tech in computer science and information techonology. I am a MERN stack entusiast and always eager to learn new skills. i am working hard in this project and my role is to develop backend api's for the project and also take care of the front-end connectivity with the api.
+            I <strong>Kuldeep Panwar</strong> student of Acropolis intitute of Technology and Research Indore pursuing B. Tech in computer science and information techonology. I am a MERN stack entusiast and always eager to learn new skills.I worked collaboratively with my colleagues on this project. for frontend i worked on UI/UX design and created different components in react js. my main role for this project is backend developer i have written various APIs for communicating with frontend and fetching data from database in Express Js using Node Js.
             </p>
           </Col>
           {width >= 992 ? (

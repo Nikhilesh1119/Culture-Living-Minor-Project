@@ -47,9 +47,9 @@ export function NavBar() {
               <LinkContainer to="/about">
                 <Nav.Link className="font-color">About</Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/contact">
+              {/* <LinkContainer to="/contact">
                 <Nav.Link className="font-color"> Contact </Nav.Link>
-              </LinkContainer>
+              </LinkContainer> */}
 
             </Nav>
             
