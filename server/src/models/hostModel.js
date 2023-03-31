@@ -78,7 +78,7 @@ const HostSchema = mongoose.Schema({
     },
     images: [{
         data: Buffer,
-        type: String
+        contentType: String
     }]
 })
 
