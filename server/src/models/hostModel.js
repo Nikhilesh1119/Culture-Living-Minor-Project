@@ -82,6 +82,6 @@ const HostSchema = mongoose.Schema({
     }]
 })
 
-const HostSignupModel = mongoose.model('loginUser', HostSchema);
+const HostSignupModel = mongoose.model('hostsignup', HostSchema);
 
 export default HostSignupModel;
