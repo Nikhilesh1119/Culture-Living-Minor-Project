@@ -46,7 +46,7 @@ const sliderStyle = {
           <img
             className="d-block w-100 sliderImg"
             src={image4}
-            alt="Forth slide"
+            alt="Third slide"
           />      
         </Carousel.Item>
 
@@ -54,7 +54,7 @@ const sliderStyle = {
           <img
             className="d-block w-100 sliderImg"
             src={image5}
-            alt="Fifth slide"
+            alt="Third slide"
           />      
         </Carousel.Item>
       </Carousel>

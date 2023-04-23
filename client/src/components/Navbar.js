@@ -1,9 +1,16 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-// import './Navbar.css';
 import logo from "../assets/logo.png";
+import { useDispatch, useSelector } from "react-redux";
+import { authActions } from "../store/AuthSlice";
+import { useNavigate } from "react-router-dom";
 
 export function NavBar() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const isLogin = useSelector(state=>state.auth.isLoggedIn);
+  const name = useSelector(state=>state.auth.name) || localStorage.getItem('name');
+
   const navStyle = {
     color: "white",
     backgroundColor: "#a248eb",
@@ -12,6 +19,12 @@ export function NavBar() {
     top: "0",
     zIndex: "2",
   };
+
+  function handleLogout(){
+     dispatch(authActions.logout());
+     localStorage.clear();
+     navigate('/');
+  }
   return (
     <div style={navStyle}>
       <Navbar bg="nav-color" variant="dark" expand="lg" style={navStyle}>
@@ -53,16 +66,29 @@ export function NavBar() {
 
             </Nav>
             
-            <NavDropdown
-              className="c-flex"
-              style={{ "margin-right": "70px" }}
-              title="Login/Signup"
-              id="navbarScrollingDropdown"
+            {
+               (isLogin || localStorage.getItem('token'))?
+               <NavDropdown
+                className="c-flex"
+                style={{ "margin-right": "70px" }}
+                title={name}
+                id="navbarScrollingDropdown"
             >
-             <LinkContainer to="/hostlogin"><NavDropdown.Item  >Host</NavDropdown.Item></LinkContainer>
-             <LinkContainer to="/guestlogin"><NavDropdown.Item >Guest</NavDropdown.Item></LinkContainer>
-             
+              <NavDropdown.Item  style={{textAlign:'center'}}> <button onClick={handleLogout} style={{border:'none',backgroundColor:'white'}}>Logout</button> </NavDropdown.Item>
+              
             </NavDropdown>
+               :
+              <NavDropdown
+                className="c-flex"
+                style={{ "margin-right": "70px" }}
+                title="Login/Signup"
+                id="navbarScrollingDropdown"
+            >
+              <LinkContainer to="/hostlogin"><NavDropdown.Item  >Host</NavDropdown.Item></LinkContainer>
+              <LinkContainer to="/guestlogin"><NavDropdown.Item >Guest</NavDropdown.Item></LinkContainer>
+            </NavDropdown>
+            }
+
           </Navbar.Collapse>
         </Container>
       </Navbar>

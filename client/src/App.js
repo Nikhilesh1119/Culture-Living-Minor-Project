@@ -25,21 +25,23 @@
 
 
 
-import React from "react";
 import { Footer } from "./components/Footer";
 import Home from "./components/Home";
 import { NavBar } from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import About from "./components/About.js";
-import Aboutus from "./components/Aboutus";
+// import Aboutus from "./components/Aboutus";
 import Homestays from "./components/Homestays";
 import SingleHomestay from "./components/SingleHomestay";
 import Error from "./components/Error";
 import HostLogin from "./components/HostLogin";
 import HostSignup from "./components/HostSignup";
 import GuestSignup from "./components/GuestSignup";
+import GuestLogin from "./components/GuestLogin";
+
 
 export default function App() {
+
   return (
     <>
     <BrowserRouter>
@@ -47,13 +49,14 @@ export default function App() {
      <Routes>
        <Route path="/" element={<Home/>}/>
        <Route path="/about" element={<About/>} />
-       <Route path="/contact" element={<Aboutus/>}  />
+       {/* <Route path="/contact" element={<Aboutus/>}  /> */}
        <Route path="/homestays" element={<Homestays/>} />
        <Route path="/singlehomestay" element={<SingleHomestay/>} />
        <Route path="/hostlogin" element={<HostLogin/>} />
-       <Route path="*" element={<Error/>} />
        <Route path="/hostsignup" element={<HostSignup/>} />
+       <Route path="/guestlogin" element={<GuestLogin/>} />
        <Route path="/guestsignup" element={<GuestSignup/>} />
+       <Route path="*" element={<Error/>} />
      </Routes >
      <Footer/>
     </BrowserRouter>    

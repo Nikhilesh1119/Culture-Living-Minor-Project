@@ -1,11 +1,9 @@
 import mongoose from "mongoose";
-import { DBURL } from "../constants/constants";
-
-export async function dbConfig() {
+export async function configDB(){
     try {
-        mongoose.set('strictQuery', true);
-        await mongoose.connect(DBURL);
-        console.log("Database connected!");
+        mongoose.set('strictQuery',true);
+        await mongoose.connect('mongodb://127.0.0.1:27017/CultureLivingDB');
+        console.log("Database Connected!"); 
     } catch (error) {
         console.log(error);
     }

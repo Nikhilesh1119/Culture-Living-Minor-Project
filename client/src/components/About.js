@@ -8,6 +8,8 @@ import responsibility from "../assets/About/responsibility.png";
 import innovative from "../assets/About/innovative.png";
 import teamwork from "../assets/About/teamwork.png";
 import kuldeep from "../assets/Team/kuldeep.jpg";
+import Nikhilesh from "../assets/Team/nikhilesh.png";
+import jainaam from "../assets/Team/jainaam.png";
 
 export default function About() {
   const [width,setWidth] = useState(window.innerWidth);
@@ -146,58 +148,38 @@ export default function About() {
           <Col md="12" lg="8" className={styles.image_text}>
             {/* <h4 style={{textAlign:"center"}}><strong>"Kuldeep Panwar"</strong></h4> */}
             <p >
-            I <strong>Kuldeep Panwar</strong> student of Acropolis intitute of Technology and Research Indore pursuing B. Tech in computer science and information techonology. I am a MERN stack entusiast and always eager to learn new skills.I worked collaboratively with my colleagues on this project. for frontend i worked on UI/UX design and created different components in react js. my main role for this project is backend developer i have written various APIs for communicating with frontend and fetching data from database in Express Js using Node Js.
+            I am <strong>Kuldeep Panwar</strong> student of Acropolis intitute of Technology and Research Indore pursuing B. Tech in computer science and information techonology. I am a MERN stack entusiast and always eager to learn new skills.I worked collaboratively with my colleagues on this project. for frontend i worked on UI/UX design and created different components in react js. my main role for this project is backend developer i have written various APIs for communicating with frontend and fetching data from database in Express Js using Node Js.
             </p>
           </Col>
           {width >= 992 ? (
             <>
               <Col md="12" lg="8" className={styles.image_text}>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
-                  natus consequatur aspernatur facere quo earum similique, illum
-                  odit recusandae aliquam, inventore aut. Excepturi, facilis.
-                  Possimus saepe error sequi fugit? Eligendi dignissimos odit,
-                  unde, laborum inventore similique illum alias corporis vero
-                  voluptatem, neque impedit temporibus itaque labore cum
-                  delectus eaque nesciunt. Beatae quia architecto cupiditate
-                  qui?
+                 I am <strong>Nikhilesh Chouhan </strong>, student of Acropolis intitute of Technology and Research Indore pursuing B. Tech in computer science and information techonology. I am currently learning MERN stack development and worked on this project called "Culture Living" i worked on various domains in this project in frontend i worked on signup login page using formik (react library) and contributed to other component as well. My main role for this project was to develop database.and i created various models for database using MongoDB.
                 </p>
               </Col>
               <Col md="12" lg="4" className={styles.image_container}>
-                <img src={kuldeep} alt=" " className={styles.teamImage}  />
+                <img src={Nikhilesh} alt=" " className={styles.teamImage}  />
               </Col>
             </>
           ) : (
             <>
               <Col md="12" lg="4" style={{marginTop:"65px"}} className={styles.image_container}>
-                <img src={kuldeep} alt=" " className={styles.teamImage} />
+                <img src={Nikhilesh} alt=" " className={styles.teamImage} />
               </Col>
               <Col md="12" lg="8" style={{marginBottom:"65px !important"}} id={styles.temp} className={styles.image_text}>
                 <p >
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
-                  natus consequatur aspernatur facere quo earum similique, illum
-                  odit recusandae aliquam, inventore aut. Excepturi, facilis.
-                  Possimus saepe error sequi fugit? Eligendi dignissimos odit,
-                  unde, laborum inventore similique illum alias corporis vero
-                  voluptatem, neque impedit temporibus itaque labore cum
-                  delectus eaque nesciunt. Beatae quia architecto cupiditate
-                  qui?
+                I am <strong>Nikhilesh Chouhan </strong>, student of Acropolis intitute of Technology and Research Indore pursuing B. Tech in computer science and information techonology. I am currently learning MERN stack development and worked on this project called "Culture Living" i worked on various domains in this project in frontend i worked on signup login page using formik (react library) and contributed to other component as well. My main role for this project was to develop database.and i created various models for database using MongoDB.
                 </p>
               </Col>
             </>
           )}         
           <Col md="12" lg="4" className={styles.image_container}>
-            <img src={kuldeep} alt=" " className={styles.teamImage} />
+            <img src={jainaam} alt=" " className={styles.teamImage} />
           </Col>
           <Col md="12" lg="8" className={styles.image_text}>
             <p >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
-              natus consequatur aspernatur facere quo earum similique, illum
-              odit recusandae aliquam, inventore aut. Excepturi, facilis.
-              Possimus saepe error sequi fugit? Eligendi dignissimos odit, unde,
-              laborum inventore similique illum alias corporis vero voluptatem,
-              neque impedit temporibus itaque labore cum delectus eaque
-              nesciunt. Beatae quia architecto cupiditate qui?
+            I am <strong>Jainaam Singhai </strong>, student of Acropolis intitute of Technology and Research Indore pursuing B. Tech in computer science and information techonology. I have learnt MERN stack development, and in order to create some product by applying my knowledge i am working on this project "Culture Living" i mainly worked on design frontend component for different views those are created by using React and i also contributed for connect frontend with backend APIs.
             </p>
           </Col>
         </Row>

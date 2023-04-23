@@ -18,14 +18,13 @@ export default function HostLogin() {
   return (
     <div style={{ marginTop: "120px" }}>
       <div className={`${styles.container}`}>
-        <h5 className={styles.heading}>Login</h5>
+        <h5 className={styles.heading}>Host Login</h5>
         {/* <h2>hyy</h2> */}
       <form onSubmit={formik.handleSubmit}>
         <input
           id="email"
           name="email"
           type="email"
-          pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}'
           placeholder="Email"
           onChange={formik.handleChange}
           value={formik.values.firstName}

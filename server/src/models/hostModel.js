@@ -10,11 +10,19 @@ const HostSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        required: true,
-        unique: true
+        required:true,
+        unique:true
+    },
+    password: {
+        type: String,
+        required:true,
+    },
+    homestaytitle:{
+        type:String,
+        required:true
     },
     phone: {
-        type: Number,
+        type: String,
         required: true,
         unique: true
     },
@@ -35,7 +43,7 @@ const HostSchema = mongoose.Schema({
         required: true
     },
     zipcode: {
-        type: Number,
+        type: String,
         required: true
     },
     country: {
@@ -43,20 +51,28 @@ const HostSchema = mongoose.Schema({
         required: true
     },
     hosttime: {
-        type: Number,
+        type: String,
         required: true
     },
     ishosted: {
-        type: Boolean,
+        type: String,
         required: true
     },
     rooms: {
-        type: Number,
+        type: String,
         required: true
     },
     capacity: {
-        type: Number,
+        type: String,
         required: true
+    },
+    meal:{
+        type:String,
+        required:true
+    },
+    abouthomestay:{
+        type:String,
+        required:true
     },
     termandcondition: {
         type: String,
@@ -64,26 +80,21 @@ const HostSchema = mongoose.Schema({
     },
     price: {
         single: {
-            type: Number,
+            type: String,
             required: true
         },
         double: {
-            type: Number,
+            type: String,
             required: true
         },
         extra: {
-            type: Number,
+            type: String,
             required: true
         }
     },
-    images: [{
-        data: Buffer,
-        contentType: String
-    }],
-    facility:[{
-        data:Buffer,
-        type:String
-    }]
+    images: [{type:String}],
+    facility:[{type:String}]
+
 })
 
 const HostSignupModel = mongoose.model('hostsignup', HostSchema);
