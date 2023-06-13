@@ -4,6 +4,8 @@ import logo from "../assets/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../store/AuthSlice";
 import { useNavigate } from "react-router-dom";
+import {FaUserCircle} from 'react-icons/fa'
+import styles from '../styles/Navbar.module.css';
 
 export function NavBar() {
   const navigate = useNavigate();
@@ -69,9 +71,9 @@ export function NavBar() {
             {
                (isLogin || localStorage.getItem('token'))?
                <NavDropdown
-                className="c-flex"
+                className={styles.loginUser}
                 style={{ "margin-right": "70px" }}
-                title={name}
+                title={<><FaUserCircle className={styles.userIcon}/> {name}</>}
                 id="navbarScrollingDropdown"
             >
               <NavDropdown.Item  style={{textAlign:'center'}}> <button onClick={handleLogout} style={{border:'none',backgroundColor:'white'}}>Logout</button> </NavDropdown.Item>

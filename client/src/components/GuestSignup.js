@@ -41,11 +41,11 @@ export default function GuestSignup() {
                     {/* <div className={s.line}><span> Personal Info </span></div> */}
                     <div className="col-md-6">
                         <label htmlFor="validationDefault01" className="form-label">First name</label>
-                        <input {...formik.getFieldProps('firstname')} pattern='[a-zA-Z].{5,}' type="text" className="form-control" id="validationDefault01" required />
+                        <input {...formik.getFieldProps('firstname')} pattern='[a-zA-Z].{3,}' type="text" className="form-control" id="validationDefault01" required />
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="validationDefault02" className="form-label">Last name</label>
-                        <input {...formik.getFieldProps('lastname')} pattern='[a-zA-Z].{5,}' type="text" className="form-control" id="validationDefault02" required />
+                        <input {...formik.getFieldProps('lastname')} pattern='[a-zA-Z].{3,}' type="text" className="form-control" id="validationDefault02" required />
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="inputEmail4" className="form-label">Email</label>

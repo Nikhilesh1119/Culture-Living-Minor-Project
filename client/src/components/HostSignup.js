@@ -11,6 +11,7 @@ import {toast,Toaster} from 'react-hot-toast';
 export default function HostSignup() {
     const [file, setfile] = useState([]);
     const[facilities,setFacilities]=useState([]);
+  
 
     const formik = useFormik({
         initialValues: {
@@ -45,14 +46,14 @@ export default function HostSignup() {
             }
             value = await Object.assign(value, { images: temp || '' });
             value = await Object.assign(value, { facility: facilities || '' });
-            console.log(value);
+            // console.log(value);
             const response =  saveHost(value);
-            console.log(response);
+            // console.log(response);
             toast.promise(response,{
                 loading:"Creating...",
                 success:<b>Registered Successfully</b>,
                 error:<b>Couldn't Register</b>
-            })
+            });
         }
     })
 
@@ -80,15 +81,15 @@ export default function HostSignup() {
                     <div className={s.line}><span> Personal Info </span></div>
                     <div className="col-md-6">
                         <label htmlFor="validationDefault01" className="form-label">First name</label>
-                        <input {...formik.getFieldProps('firstname')} type="text" className={`form-control ${s.input}`} id="validationDefault01"  required />
+                        <input {...formik.getFieldProps('firstname')} type="text" pattern='[a-zA-Z].{3,}' className={`form-control ${s.input}`} id="validationDefault01"  required />
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="validationDefault02" className="form-label">Last name</label>
-                        <input {...formik.getFieldProps('lastname')} type="text" className={`form-control ${s.input}`}id="validationDefault02" required />
+                        <input {...formik.getFieldProps('lastname')} type="text" pattern='[a-zA-Z].{3,}' className={`form-control ${s.input}`}id="validationDefault02" required />
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="inputEmail4" className="form-label">Email</label>
-                        <input {...formik.getFieldProps('email')} type="email" className={`form-control ${s.input}`} id="inputEmail4" required />
+                        <input {...formik.getFieldProps('email')} type="email" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}' className={`form-control ${s.input}`} id="inputEmail4" required />
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="" className="form-label">Password</label>
@@ -108,7 +109,7 @@ export default function HostSignup() {
                     </div> */}
                     <div className="col-md-12">
                         <label htmlFor="validationDefault02" className="form-label">Phone Number</label>
-                        <input {...formik.getFieldProps('phone')} type="text" className= {`form-control ${s.input}`} id="validationDefault02" required />
+                        <input {...formik.getFieldProps('phone')} type="text" pattern='[0-9]{10}' className= {`form-control ${s.input}`} id="validationDefault02" required />
                     </div>
 
                     <div className={s.line}><span> Location </span></div>
@@ -134,7 +135,7 @@ export default function HostSignup() {
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="inputZip" className="form-label">Zip Code</label>
-                        <input {...formik.getFieldProps('zipcode')} type="text" className={`form-control ${s.input}`} id="inputZip" required />
+                        <input {...formik.getFieldProps('zipcode')} type="text" pattern='[0-9]{6}' className={`form-control ${s.input}`} id="inputZip" required />
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="inputZip" className="form-label">Country</label>
